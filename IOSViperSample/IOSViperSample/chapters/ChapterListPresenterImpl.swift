@@ -24,7 +24,10 @@ class ChapterListPresenterImpl: ChapterListPresenter {
     
     func start() {
         chapterListInteractor.execute({
-            self.view.showChapters($0)
+            let viewModels = $0?.map({ (chapter) -> ChapterViewModel in
+                ChapterViewModel(chapter.title, chapter.description, getIconForChapterType(chapter.type))
+            })
+            self.view.showChapters(viewModels)
         }) {
             self.view.showErrorMessage($0.localizedDescription)
         }
@@ -34,8 +37,8 @@ class ChapterListPresenterImpl: ChapterListPresenter {
         chapterListInteractor.cancel()
     }
     
-    func chapterItemClicked(_ chapter: Chapter) {
-        router.gotoChapter(chapter)
+    func chapterItemClicked(_ chapter: ChapterViewModel) {
+        router.openChapterDetails(chapter)
     }
     
 }

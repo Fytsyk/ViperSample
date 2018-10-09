@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import PKHUD
 
 class ChapterListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, ChapterListView, ChapterListRouter {
     
-    private var items: [Chapter]? = []
+    private var items: [ChapterViewModel]? = []
     private var presenter: ChapterListPresenter?
 
     @IBOutlet weak var tableView: UITableView!
@@ -39,29 +40,29 @@ class ChapterListViewController: UIViewController, UITableViewDelegate, UITableV
         self.presenter = ChapterListPresenterImpl(interactor, self, self)
     }
 
-    func showChapters(_ chapters: Array<Chapter>?) {
+    func showChapters(_ chapters: Array<ChapterViewModel>?) {
         self.items = chapters
         self.tableView.reloadData()
     }
 
     func showProgress(_ show: Bool) {
-
+        if show {
+            HUD.show(.progress)
+        } else{
+            HUD.hide()
+        }
     }
-
+    
     func showErrorMessage(_ message: String?) {
-
+        HUD.flash(.label(message))
     }
 
-    func openChapterDetails(_ chapter: Chapter) {
-
+    func openChapterDetails(_ chapter: ChapterViewModel) {
+        performSegue(withIdentifier: "showChapterDetailsSegue", sender: chapter)
     }
 
     func exit() {
-
-    }
-    
-    func gotoChapter(_ chapter: Chapter) {
-        
+        self.dismiss(animated: true, completion: nil)
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -71,10 +72,25 @@ class ChapterListViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as? ChapterCell
 
-        cell?.itemTitle.text = items![indexPath.row].title
-        cell?.itemDescription.text = items![indexPath.row].description
+        let chapter = items![indexPath.row]
+        cell?.itemTitle.text = chapter.title
+        cell?.itemDescription.text = chapter.description
+        cell?.itemImage.image = chapter.image
 
         return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let chapter = items![indexPath.row]
+        self.presenter?.chapterItemClicked(chapter)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showChapterDetailsSegue" {
+        let viewController = segue.destination as! ChapterDetalViewController
+        viewController.chapter = sender as? Chapter
+        }
     }
 }
 
