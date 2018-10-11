@@ -9,8 +9,12 @@ class ChapterListPresenterImpl(private val chapterListInteractor: GetChaptersInt
 
     override fun start() {
         view.showProgress(true)
-        chapterListInteractor.execute(null, {
-            view.showChapters(it)
+        chapterListInteractor.execute(null, { chapter ->
+            val viewModels = chapter?.map {
+                ChapterViewModel(it.title,
+                        it.description, getIconForChapterType(it.type))
+            }
+            view.showChapters(viewModels)
         }) {
             view.showErrorMessage(it.message)
         }
@@ -20,7 +24,7 @@ class ChapterListPresenterImpl(private val chapterListInteractor: GetChaptersInt
         chapterListInteractor.cancel()
     }
 
-    override fun userItemClicked(chapter: Chapter) {
+    override fun chapterItemClicked(chapter: ChapterViewModel) {
         router.openChapterDetails(chapter)
     }
 }

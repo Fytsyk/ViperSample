@@ -46,6 +46,6 @@ protocol ChapterListPresenter {
 }
 
 protocol ChapterListRouter {
-    func openChapterDetails(_ chapter: ChapterViewModel)
+    func openChapterDetails(_ chapterTitle: String)
     func exit()
 }

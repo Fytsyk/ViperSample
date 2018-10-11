@@ -51,10 +51,10 @@
             </objects>
             <point key="canvasLocation" x="-217" y="87"/>
         </scene>
-        <!--Chapter Detal View Controller-->
+        <!--Chapter Details View Controller-->
         <scene sceneID="W29-Fh-mMk">
             <objects>
-                <viewController id="Odb-SM-gWM" customClass="ChapterDetalViewController" customModule="IOSViperSample" sceneMemberID="viewController">
+                <viewController id="Odb-SM-gWM" customClass="ChapterDetailsViewController" customModule="IOSViperSample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lUs-kj-Li8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -65,7 +65,7 @@
                                     <constraint firstAttribute="height" constant="300" id="PPs-QO-r7s"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8n-Oy-p8p">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chapter Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C8n-Oy-p8p">
                                 <rect key="frame" x="16" y="388" width="144.5" height="31.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="31.5" id="lR0-a6-dxJ"/>
@@ -113,6 +113,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="B9z-yS-IwQ"/>
                     </view>
+                    <connections>
+                        <outlet property="chapterDescriptionView" destination="8SU-2r-3Oa" id="QaY-tn-Jrm"/>
+                        <outlet property="chapterIconView" destination="93y-ag-fL5" id="PRs-Us-9M2"/>
+                        <outlet property="chapterTitleView" destination="C8n-Oy-p8p" id="oXF-vl-5d1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="owO-zT-9cn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

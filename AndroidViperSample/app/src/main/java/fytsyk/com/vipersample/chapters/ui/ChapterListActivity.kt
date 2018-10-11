@@ -1,15 +1,19 @@
 package fytsyk.com.vipersample.chapters.ui
 
-import android.support.v7.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import android.support.v7.app.AlertDialog
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import fytsyk.com.vipersample.R
+import fytsyk.com.vipersample.chapterDetails.ChapterDetailsActivity
+import fytsyk.com.vipersample.chapterDetails.EXTRA_CHAPTER_TITLE
 import fytsyk.com.vipersample.chapters.ChapterListPresenterImpl
 import fytsyk.com.vipersample.chapters.ChaptersRepositoryImpl
 import fytsyk.com.vipersample.chapters.viper.*
@@ -20,7 +24,7 @@ import kotlinx.coroutines.experimental.android.Main
 class ChapterListActivity : AppCompatActivity(), ChapterListView, ChapterListRouter {
 
     private val adapter = ChaptersAdapter()
-    private var items: List<Chapter>? = ArrayList<Chapter>()
+    private var items: List<ChapterViewModel>? = ArrayList<ChapterViewModel>()
 
     private val listView by lazy {
         findViewById<RecyclerView>(R.id.list)
@@ -32,7 +36,7 @@ class ChapterListActivity : AppCompatActivity(), ChapterListView, ChapterListRou
 
     private lateinit var presenter: ChapterListPresenter
 
-    override fun showChapters(chapters: List<Chapter>?) {
+    override fun showChapters(chapters: List<ChapterViewModel>?) {
         showProgress(false)
         items = chapters
         adapter.notifyDataSetChanged()
@@ -51,7 +55,10 @@ class ChapterListActivity : AppCompatActivity(), ChapterListView, ChapterListRou
                 .show()
     }
 
-    override fun openChapterDetails(chapter: Chapter) {
+    override fun openChapterDetails(chapter: ChapterViewModel) {
+        val intent = Intent(this, ChapterDetailsActivity::class.java)
+                .putExtra(EXTRA_CHAPTER_TITLE, chapter.title)
+        startActivity(intent)
     }
 
     override fun exit() {
@@ -63,7 +70,7 @@ class ChapterListActivity : AppCompatActivity(), ChapterListView, ChapterListRou
 
         initPresenter()
 
-        listView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        listView.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
         listView.adapter = adapter
     }
 
@@ -95,6 +102,9 @@ class ChapterListActivity : AppCompatActivity(), ChapterListView, ChapterListRou
             val chapter = items!![position]
             viewHolder.titleView.text = chapter.title
             viewHolder.descriptionView.text = chapter.description
+            viewHolder.imageView.setImageResource(chapter.iconRes)
+
+            viewHolder.itemView.setOnClickListener { presenter.chapterItemClicked(chapter) }
         }
     }
 }

@@ -9,8 +9,7 @@
 /* Begin PBXBuildFile section */
 		59684FD4A0BF78D6C0F31AFA /* ChaptersRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5968401EAA2F356AE5AEA999 /* ChaptersRepositoryImpl.swift */; };
 		751E130A216017A300B9E506 /* ChapterDetailsViperContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1309216017A300B9E506 /* ChapterDetailsViperContract.swift */; };
-		752981FA216522C100B8DA3E /* ChapterDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752981F9216522C100B8DA3E /* ChapterDetailViewController.swift */; };
-		752981FC21654DFB00B8DA3E /* ChapterDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752981FB21654DFB00B8DA3E /* ChapterDetailInteractor.swift */; };
+		752981FA216522C100B8DA3E /* ChapterDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752981F9216522C100B8DA3E /* ChapterDetailsViewController.swift */; };
 		754601A221369EFD00FDC6CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754601A121369EFD00FDC6CE /* AppDelegate.swift */; };
 		754601A421369EFD00FDC6CE /* ChapterListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 754601A321369EFD00FDC6CE /* ChapterListController.swift */; };
 		754601A721369EFD00FDC6CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 754601A521369EFD00FDC6CE /* Main.storyboard */; };
@@ -21,6 +20,8 @@
 		75A7759E215AD2740078246D /* ChapterListPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A7759D215AD2740078246D /* ChapterListPresenterImpl.swift */; };
 		75A775A1215AD3AE0078246D /* GetChaptersInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A775A0215AD3AE0078246D /* GetChaptersInteractor.swift */; };
 		75AAC23E216D253500372893 /* ChapterIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAC23D216D253500372893 /* ChapterIcon.swift */; };
+		75AAC240216FD60500372893 /* ChapterDetailsPresenterImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAC23F216FD60500372893 /* ChapterDetailsPresenterImpl.swift */; };
+		75AAC242216FE33F00372893 /* ChapterDetailsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AAC241216FE33E00372893 /* ChapterDetailsInteractor.swift */; };
 		75BC0A28213EE55B0055CFAF /* ChapterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75BC0A27213EE55B0055CFAF /* ChapterCell.xib */; };
 		75BC0A2A21404AE10055CFAF /* ChapterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BC0A2921404AE10055CFAF /* ChapterCell.swift */; };
 		AF66CE92F8774F7D513CCC15 /* Pods_IOSViperSample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A561CC5CAC607C6F00FD76BA /* Pods_IOSViperSample.framework */; };
@@ -30,8 +31,7 @@
 		0D8E27ACC405FA1F8A9C79A4 /* Pods_TestTableView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTableView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5968401EAA2F356AE5AEA999 /* ChaptersRepositoryImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChaptersRepositoryImpl.swift; sourceTree = "<group>"; };
 		751E1309216017A300B9E506 /* ChapterDetailsViperContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailsViperContract.swift; sourceTree = "<group>"; };
-		752981F9216522C100B8DA3E /* ChapterDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailViewController.swift; sourceTree = "<group>"; };
-		752981FB21654DFB00B8DA3E /* ChapterDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailInteractor.swift; sourceTree = "<group>"; };
+		752981F9216522C100B8DA3E /* ChapterDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailsViewController.swift; sourceTree = "<group>"; };
 		7546019E21369EFD00FDC6CE /* IOSViperSample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSViperSample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		754601A121369EFD00FDC6CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		754601A321369EFD00FDC6CE /* ChapterListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListController.swift; sourceTree = "<group>"; };
@@ -44,6 +44,8 @@
 		75A7759D215AD2740078246D /* ChapterListPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterListPresenterImpl.swift; sourceTree = "<group>"; };
 		75A775A0215AD3AE0078246D /* GetChaptersInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetChaptersInteractor.swift; sourceTree = "<group>"; };
 		75AAC23D216D253500372893 /* ChapterIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterIcon.swift; sourceTree = "<group>"; };
+		75AAC23F216FD60500372893 /* ChapterDetailsPresenterImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterDetailsPresenterImpl.swift; sourceTree = "<group>"; };
+		75AAC241216FE33E00372893 /* ChapterDetailsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChapterDetailsInteractor.swift; sourceTree = "<group>"; };
 		75BC0A27213EE55B0055CFAF /* ChapterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChapterCell.xib; sourceTree = "<group>"; };
 		75BC0A2921404AE10055CFAF /* ChapterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterCell.swift; sourceTree = "<group>"; };
 		787BC51977A1A41AAB2C8804 /* Pods-IOSViperSample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSViperSample.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSViperSample/Pods-IOSViperSample.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				751E1308215FF9B900B9E506 /* viper */,
-				752981F9216522C100B8DA3E /* ChapterDetailViewController.swift */,
+				752981F9216522C100B8DA3E /* ChapterDetailsViewController.swift */,
+				75AAC23F216FD60500372893 /* ChapterDetailsPresenterImpl.swift */,
 			);
 			path = chapterDetail;
 			sourceTree = "<group>";
@@ -93,8 +96,8 @@
 		751E1308215FF9B900B9E506 /* viper */ = {
 			isa = PBXGroup;
 			children = (
+				75AAC241216FE33E00372893 /* ChapterDetailsInteractor.swift */,
 				751E1309216017A300B9E506 /* ChapterDetailsViperContract.swift */,
-				752981FB21654DFB00B8DA3E /* ChapterDetailInteractor.swift */,
 			);
 			path = viper;
 			sourceTree = "<group>";
@@ -277,15 +280,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				75BC0A2A21404AE10055CFAF /* ChapterCell.swift in Sources */,
-				752981FC21654DFB00B8DA3E /* ChapterDetailInteractor.swift in Sources */,
-				752981FA216522C100B8DA3E /* ChapterDetailViewController.swift in Sources */,
+				752981FA216522C100B8DA3E /* ChapterDetailsViewController.swift in Sources */,
 				754601A421369EFD00FDC6CE /* ChapterListController.swift in Sources */,
 				751E130A216017A300B9E506 /* ChapterDetailsViperContract.swift in Sources */,
+				75AAC242216FE33F00372893 /* ChapterDetailsInteractor.swift in Sources */,
 				75AAC23E216D253500372893 /* ChapterIcon.swift in Sources */,
 				754601A221369EFD00FDC6CE /* AppDelegate.swift in Sources */,
 				759BF8B62157EE71002750C8 /* BaseInteractor.swift in Sources */,
 				75A7759E215AD2740078246D /* ChapterListPresenterImpl.swift in Sources */,
 				75A775A1215AD3AE0078246D /* GetChaptersInteractor.swift in Sources */,
+				75AAC240216FD60500372893 /* ChapterDetailsPresenterImpl.swift in Sources */,
 				75A7759C215AD0C40078246D /* ChapterListViperContract.swift in Sources */,
 				59684FD4A0BF78D6C0F31AFA /* ChaptersRepositoryImpl.swift in Sources */,
 			);

@@ -1,9 +1,9 @@
 package fytsyk.com.vipersample.chapters.ui
 
-import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import fytsyk.com.vipersample.R
 
 class ChapterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

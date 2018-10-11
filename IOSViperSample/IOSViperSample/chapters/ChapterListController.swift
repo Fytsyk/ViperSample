@@ -57,8 +57,8 @@ class ChapterListViewController: UIViewController, UITableViewDelegate, UITableV
         HUD.flash(.label(message))
     }
 
-    func openChapterDetails(_ chapter: ChapterViewModel) {
-        performSegue(withIdentifier: "showChapterDetailsSegue", sender: chapter)
+    func openChapterDetails(_ chapterTitle: String) {
+        performSegue(withIdentifier: "showChapterDetailsSegue", sender: chapterTitle)
     }
 
     func exit() {
@@ -88,8 +88,8 @@ class ChapterListViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showChapterDetailsSegue" {
-        let viewController = segue.destination as! ChapterDetalViewController
-        viewController.chapter = sender as? Chapter
+        let viewController = segue.destination as! ChapterDetailsViewController
+        viewController.chapterTitle = sender as? String
         }
     }
 }
