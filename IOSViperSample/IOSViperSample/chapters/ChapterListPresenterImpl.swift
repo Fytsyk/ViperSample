@@ -40,5 +40,4 @@ class ChapterListPresenterImpl: ChapterListPresenter {
     func chapterItemClicked(_ chapter: ChapterViewModel) {
         router.openChapterDetails(chapter.title!)
     }
-    
 }
